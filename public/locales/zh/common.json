@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于KIKI",
+    "insights": "行业观点",
+    "business": "企业产品",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "name": "张紫琪",
+    "nameEn": "Kiki Zhang",
+    "title": "不锈钢行业创新领导者",
+    "subtitle": "13年深耕不锈钢行业，引领顺佳兴集团创新发展",
+    "description": "以温柔与坚韧并存的力量，打造年营收超2亿元的行业标杆企业",
+    "cta": "了解更多",
+    "stats": {
+      "experience": "13年+",
+      "experienceLabel": "行业经验",
+      "revenue": "2亿+",
+      "revenueLabel": "年营收",
+      "employees": "300+",
+      "employeesLabel": "团队成员"
+    }
+  },
+  "about": {
+    "title": "关于KIKI",
+    "subtitle": "创新与坚守的创业历程",
+    "description": "我是张紫琪，一名深耕不锈钢行业13年的女性企业家，也是顺佳兴不锈钢集团的创始人。作为一名女性，我始终相信温柔与坚韧可以并存，创新与责任可以同行。",
+    "journey": {
+      "title": "创业历程",
+      "items": [
+        {
+          "year": "2004",
+          "event": "开启手机连锁零售事业",
+          "description": "积累宝贵创业经验"
+        },
+        {
+          "year": "2012",
+          "event": "进入不锈钢行业",
+          "description": "怀揣梦想开启全新征程"
+        },
+        {
+          "year": "2014",
+          "event": "创立顺佳兴不锈钢",
+          "description": "正式成立公司"
+        },
+        {
+          "year": "2017",
+          "event": "营业额突破3.8亿",
+          "description": "企业快速发展"
+        },
+        {
+          "year": "2022",
+          "event": "升级为广东顺佳兴",
+          "description": "注册资本达1000万"
+        },
+        {
+          "year": "2025",
+          "event": "员工超300人",
+          "description": "年营收稳定2亿+"
+        }
+      ]
+    }
+  },
+  "business": {
+    "title": "KIKI的企业和产品",
+    "subtitle": "专业实力与企业格局",
+    "company": {
+      "name": "广东顺佳兴不锈钢有限公司",
+      "description": "年营收超2亿元，员工超300人的行业标杆企业"
+    },
+    "advantages": {
+      "title": "核心优势",
+      "items": [
+        {
+          "title": "先进制造",
+          "description": "拥有数控剪折、激光切割、焊接抛光等全套设备，3台镀色钛金炉及专业打样炉"
+        },
+        {
+          "title": "多元产品体系",
+          "description": "主营201、304系列彩色不锈钢板，提供从材料到成品的一站式解决方案"
+        },
+        {
+          "title": "技术与服务并重",
+          "description": "专业技术团队全流程质量管控，持续创新工艺，优化产品性能"
+        }
+      ]
+    },
+    "products": {
+      "title": "产品展示",
+      "waterWave": "不锈钢水波纹板",
+      "vintage": "不锈钢做旧板",
+      "copper": "不锈钢仿铜板",
+      "mirror": "不锈钢镜面板",
+      "etching": "不锈钢蚀刻板"
+    }
+  },
+  "insights": {
+    "title": "我的行业观点",
+    "subtitle": "建立信任关系的关键内容",
+    "readMore": "阅读全文",
+    "sampleArticles": [
+      {
+        "title": "不锈钢行业的数字化转型之路",
+        "excerpt": "在数字经济时代，传统制造业如何拥抱变化，实现高质量发展？",
+        "date": "2024-12-15"
+      },
+      {
+        "title": "女性领导力在制造业中的独特价值",
+        "excerpt": "女性的细腻与坚韧，为传统制造业注入了新的活力和创新思维。",
+        "date": "2024-12-10"
+      },
+      {
+        "title": "可持续发展：不锈钢行业的责任与机遇",
+        "excerpt": "环保与发展并行，探索不锈钢行业的绿色转型路径。",
+        "date": "2024-12-05"
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系KIKI",
+    "subtitle": "期待与您的合作交流",
+    "email": "联系邮箱",
+    "phone": "联系电话",
+    "address": "公司地址",
+    "wechat": "微信联系"
+  },
+  "footer": {
+    "company": "广东顺佳兴不锈钢有限公司",
+    "rights": "版权所有",
+    "slogan": "让中国制造更有温度"
+  },
+  "common": {
+    "darkMode": "深色模式",
+    "lightMode": "浅色模式",
+    "language": "语言",
+    "loading": "加载中...",
+    "error": "出错了",
+    "retry": "重试"
+  }
+} 

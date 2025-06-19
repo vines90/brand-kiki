@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About KIKI",
+    "insights": "Industry Insights",
+    "business": "Business & Products",
+    "contact": "Contact"
+  },
+  "hero": {
+    "name": "张紫琪",
+    "nameEn": "Kiki Zhang",
+    "title": "Innovative Leader in Stainless Steel Industry",
+    "subtitle": "13 years of expertise in stainless steel, leading Shunjiaxing Group's innovation",
+    "description": "Building an industry benchmark enterprise with over 200M RMB annual revenue through the power of gentleness and resilience",
+    "cta": "Learn More",
+    "stats": {
+      "experience": "13+",
+      "experienceLabel": "Years Experience",
+      "revenue": "200M+",
+      "revenueLabel": "Annual Revenue",
+      "employees": "300+",
+      "employeesLabel": "Team Members"
+    }
+  },
+  "about": {
+    "title": "About KIKI",
+    "subtitle": "A Journey of Innovation and Perseverance",
+    "description": "I am Kiki Zhang, a female entrepreneur with 13 years of expertise in the stainless steel industry and founder of Shunjiaxing Stainless Steel Group. As a woman, I firmly believe that gentleness and resilience can coexist, and innovation and responsibility can go hand in hand.",
+    "journey": {
+      "title": "Entrepreneurial Journey",
+      "items": [
+        {
+          "year": "2004",
+          "event": "Started Mobile Retail Chain Business",
+          "description": "Gained valuable entrepreneurial experience"
+        },
+        {
+          "year": "2012",
+          "event": "Entered Stainless Steel Industry",
+          "description": "Embarked on a new journey with dreams"
+        },
+        {
+          "year": "2014",
+          "event": "Founded Shunjiaxing Stainless Steel",
+          "description": "Officially established the company"
+        },
+        {
+          "year": "2017",
+          "event": "Revenue Breakthrough 380M RMB",
+          "description": "Rapid business development"
+        },
+        {
+          "year": "2022",
+          "event": "Upgraded to Guangdong Shunjiaxing",
+          "description": "Registered capital reached 10M RMB"
+        },
+        {
+          "year": "2025",
+          "event": "Over 300 Employees",
+          "description": "Stable annual revenue of 200M+ RMB"
+        }
+      ]
+    }
+  },
+  "business": {
+    "title": "KIKI's Enterprise and Products",
+    "subtitle": "Professional Strength and Corporate Vision",
+    "company": {
+      "name": "Guangdong Shunjiaxing Stainless Steel Co., Ltd.",
+      "description": "Industry benchmark enterprise with over 200M RMB annual revenue and 300+ employees"
+    },
+    "advantages": {
+      "title": "Core Advantages",
+      "items": [
+        {
+          "title": "Advanced Manufacturing",
+          "description": "Complete equipment including CNC cutting, laser cutting, welding and polishing, 3 titanium plating furnaces and professional sampling furnace"
+        },
+        {
+          "title": "Diversified Product System",
+          "description": "Specializing in 201 and 304 series colored stainless steel plates, providing one-stop solutions from materials to finished products"
+        },
+        {
+          "title": "Technology and Service Excellence",
+          "description": "Professional technical team with full-process quality control, continuous process innovation and performance optimization"
+        }
+      ]
+    },
+    "products": {
+      "title": "Product Showcase",
+      "waterWave": "Stainless Steel Water Wave Panel",
+      "vintage": "Stainless Steel Vintage Panel",
+      "copper": "Stainless Steel Copper-like Panel",
+      "mirror": "Stainless Steel Mirror Panel",
+      "etching": "Stainless Steel Etched Panel"
+    }
+  },
+  "insights": {
+    "title": "My Industry Insights",
+    "subtitle": "Key Content for Building Trust",
+    "readMore": "Read More",
+    "sampleArticles": [
+      {
+        "title": "Digital Transformation in Stainless Steel Industry",
+        "excerpt": "In the digital economy era, how can traditional manufacturing embrace change and achieve high-quality development?",
+        "date": "2024-12-15"
+      },
+      {
+        "title": "Unique Value of Female Leadership in Manufacturing",
+        "excerpt": "Women's meticulousness and resilience inject new vitality and innovative thinking into traditional manufacturing.",
+        "date": "2024-12-10"
+      },
+      {
+        "title": "Sustainable Development: Responsibility and Opportunity in Stainless Steel Industry",
+        "excerpt": "Environmental protection and development go hand in hand, exploring the green transformation path of the stainless steel industry.",
+        "date": "2024-12-05"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact KIKI",
+    "subtitle": "Looking Forward to Cooperation and Exchange",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "wechat": "WeChat"
+  },
+  "footer": {
+    "company": "Guangdong Shunjiaxing Stainless Steel Co., Ltd.",
+    "rights": "All Rights Reserved",
+    "slogan": "Making Chinese Manufacturing More Warm"
+  },
+  "common": {
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language",
+    "loading": "Loading...",
+    "error": "Error occurred",
+    "retry": "Retry"
+  }
+} 
