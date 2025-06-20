@@ -174,17 +174,7 @@ export default function HeroSection() {
               </div>
             </motion.div>
 
-            {/* CTA按钮 - 新增 */}
-            <motion.div variants={itemVariants} className="pt-4">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-accent-100 to-accent-200 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-accent-100/25 transition-all duration-300 flex items-center space-x-2"
-              >
-                <span>{t('hero.cta')}</span>
-                <ChevronDown className="w-5 h-5" />
-              </motion.button>
-            </motion.div>
+
           </motion.div>
 
           {/* 右侧个人照片区域 */}
