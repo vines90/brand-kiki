@@ -27,8 +27,8 @@ export default function Home() {
       <Layout>
         <HeroSection />
         <AboutSection />
-        <BusinessSection />
         <InsightsSection />
+        <BusinessSection />
       </Layout>
     </>
   )

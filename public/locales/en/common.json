@@ -13,6 +13,14 @@
     "subtitle": "13 years of expertise in stainless steel, leading Shunjiaxing Group's innovation",
     "description": "Building an industry benchmark enterprise with over 200M RMB annual revenue through the power of gentleness and resilience",
     "cta": "Learn More",
+    "greeting": "Hello, I'm Kiki Zhang",
+    "tagline": "Founder of Guangdong Foshan Shunjiaxing Stainless Steel Group",
+    "tags": {
+      "experience": "13 Years Experience",
+      "female": "Female Entrepreneur", 
+      "leader": "Innovation Leader",
+      "quality": "Quality Pioneer"
+    },
     "stats": {
       "experience": "13+",
       "experienceLabel": "Years Experience",
@@ -23,99 +31,228 @@
     }
   },
   "about": {
-    "title": "About KIKI",
-    "subtitle": "A Journey of Innovation and Perseverance",
-    "description": "I am Kiki Zhang, a female entrepreneur with 13 years of expertise in the stainless steel industry and founder of Shunjiaxing Stainless Steel Group. As a woman, I firmly believe that gentleness and resilience can coexist, and innovation and responsibility can go hand in hand.",
+    "title": "About",
+    "subtitle": "Female Entrepreneur with Gentleness and Resilience",
+    "description": "With 13 years of deep expertise in the stainless steel industry, I have built a trusted enterprise with the unique meticulousness and resilience of women. I believe that true leadership comes from dedication to quality and pursuit of innovation.",
+    "storyTitle": "My Entrepreneurial Story",
+    "storySubtitle": "The transformation journey from industry newcomer to business leader",
+    "storyContent1": "In 2011, I entered the stainless steel industry with passion for manufacturing. At that time, I was just a young newcomer, full of curiosity and awe for this industry. Starting from basic positions, I deeply understood every production process and learned every technical detail.",
+    "storyContent2": "As a woman in this traditional manufacturing industry, I faced more challenges than my male counterparts. But I always believe that gentleness and resilience can coexist, and innovation and responsibility can go hand in hand. Every difficulty is an opportunity for growth, and every setback makes me more determined.",
+    "storyContent3": "In 2016, with 5 years of industry experience and keen market insight, I founded Shunjiaxing Stainless Steel. From the initial small team to the current enterprise with over 300 people, from local market to international stage, I have always adhered to the philosophy of creating quality with craftsmanship and leading the future with innovation.",
+    "tags": {
+      "female": "Female Entrepreneur",
+      "pioneer": "Industry Pioneer", 
+      "leader": "Innovation Leader"
+    },
+    "values": {
+      "title": "Core Values",
+      "quality": "Quality First, Customer Supreme",
+      "innovation": "Continuous Innovation, Pursue Excellence",
+      "integrity": "Honest Business, Win-Win Cooperation"
+    },
+    "vision": {
+      "title": "Global Vision",
+      "description": "Based in Foshan, facing the world. Our products have been exported to Europe, America and other regions, committed to building an internationally competitive stainless steel brand."
+    },
+    "achievements": {
+      "title": "Achievement Data",
+      "years": "Years Experience",
+      "employees": "Employees",
+      "revenue": "Annual Revenue",
+      "clients": "Clients"
+    },
     "journey": {
-      "title": "Entrepreneurial Journey",
+      "title": "My Entrepreneurial Story",
+      "subtitle": "From entrepreneurial enlightenment in 2004 to becoming an industry benchmark today, each stage is a witness of growth",
+      "scrollHint": "Swipe to view the complete story",
+      "summary": {
+        "title": "21-Year Entrepreneurial Journey, From Zero to Billions",
+        "years": "Entrepreneurial Years",
+        "members": "Team Members", 
+        "revenue": "Annual Revenue",
+        "milestones": "Major Milestones"
+      },
       "items": [
         {
           "year": "2004",
-          "event": "Started Mobile Retail Chain Business",
-          "description": "Gained valuable entrepreneurial experience"
+          "event": "Entrepreneurial Enlightenment",
+          "title": "Mobile Retail Chain Business",
+          "description": "Started mobile retail chain business, accumulated valuable entrepreneurial experience, laying a solid commercial foundation for subsequent enterprise development."
         },
         {
           "year": "2012",
-          "event": "Entered Stainless Steel Industry",
-          "description": "Embarked on a new journey with dreams"
+          "event": "Industry Transformation",
+          "title": "Entered Stainless Steel Industry",
+          "description": "Entered the stainless steel industry with dreams, starting a new journey. Started learning industry knowledge from scratch and deeply understanding market needs."
+        },
+        {
+          "year": "2013",
+          "event": "Startup Phase",
+          "title": "First Processing Plant Established",
+          "description": "Established the first stainless steel processing plant, taking a solid step. Small team with big dreams, creating every product with craftsmanship spirit."
         },
         {
           "year": "2014",
-          "event": "Founded Shunjiaxing Stainless Steel",
-          "description": "Officially established the company"
+          "event": "Official Launch",
+          "title": "Shunjiaxing Stainless Steel Founded",
+          "description": "Officially established Foshan Shunjiaxing Stainless Steel Co., Ltd., marking the enterprise's entry into a new historical stage of development."
         },
         {
           "year": "2017",
-          "event": "Revenue Breakthrough 380M RMB",
-          "description": "Rapid business development"
+          "event": "Rapid Development",
+          "title": "Revenue Breakthrough 380M RMB",
+          "description": "Enterprise revenue broke through 380 million RMB, the team continued to grow, and product quality gained widespread market recognition."
         },
         {
           "year": "2022",
-          "event": "Upgraded to Guangdong Shunjiaxing",
-          "description": "Registered capital reached 10M RMB"
+          "event": "Enterprise Upgrade",
+          "title": "Upgraded to Guangdong Shunjiaxing",
+          "description": "Upgraded to Guangdong Shunjiaxing Stainless Steel Co., Ltd., with registered capital reaching 10 million RMB, significantly enhancing enterprise strength."
         },
         {
           "year": "2025",
-          "event": "Over 300 Employees",
-          "description": "Stable annual revenue of 200M+ RMB"
+          "event": "Industry Benchmark",
+          "title": "300+ Employees 200M+ Revenue",
+          "description": "Employee scale exceeds 300 people, annual revenue stable at over 200 million RMB, becoming a benchmark enterprise in the industry."
         }
       ]
     }
   },
   "business": {
-    "title": "KIKI's Enterprise and Products",
-    "subtitle": "Professional Strength and Corporate Vision",
+    "title": "My",
+    "titleHighlight": "Enterprise and Products",
+    "subtitle": "Industrial Quality, Crafted with Heart",
+    "description": "Shunjiaxing Stainless Steel focuses on R&D, production and sales of high-quality stainless steel products. We are driven by technological innovation and based on quality, providing high-quality stainless steel solutions for global customers.",
+    "stats": {
+      "base": "Production Base",
+      "team": "Professional Team", 
+      "revenue": "Annual Revenue",
+      "clients": "Global Clients"
+    },
+    "advantages": {
+      "title": "Core Advantages",
+      "description": "With technological innovation, quality assurance and service excellence, we have established strong competitive advantages in the industry",
+      "innovation": {
+        "title": "Technological Innovation",
+        "description": "Continuous investment in R&D, mastering core technologies, achieving multiple breakthroughs in stainless steel surface treatment processes, with product quality reaching international advanced levels.",
+        "highlights": ["Patent Technology", "Process Innovation", "Quality Leadership"]
+      },
+      "quality": {
+        "title": "Quality Assurance", 
+        "description": "Strict quality management system, from raw material procurement to finished product delivery, every link has strict quality control to ensure products meet international standards.",
+        "highlights": ["ISO Certification", "Full Process Monitoring", "International Standards"]
+      },
+      "service": {
+        "title": "Service Excellence",
+        "description": "Customer-centered, providing comprehensive solutions from product design to after-sales service, establishing a complete customer service system.",
+        "highlights": ["Full Service", "Rapid Response", "Professional Team"]
+      }
+    },
+    "products": {
+      "title": "Core Products",
+      "subtitle": "Precision Quality, Diverse Choices",
+      "waterWave": {
+        "name": "Stainless Steel Water Wave Panel",
+        "description": "Elegant water wave texture design, suitable for high-end decorative places, smooth and delicate surface with excellent corrosion resistance.",
+        "features": ["High-end Decoration", "Corrosion Resistant", "Beautiful"],
+        "category": "Decorative Panels"
+      },
+      "vintage": {
+        "name": "Stainless Steel Vintage Panel",
+        "description": "Unique aging process, creating retro texture, showing the beauty of time precipitation, widely used in characteristic buildings.",
+        "features": ["Retro Style", "Unique Process", "Artistic Effect"],
+        "category": "Artistic Panels"
+      },
+      "copper": {
+        "name": "Stainless Steel Copper-like Panel",
+        "description": "Perfect copper panel effect, combining beauty and practicality, lower cost, easier maintenance, longer service life.",
+        "features": ["Copper Effect", "Cost Advantage", "Easy Maintenance"],
+        "category": "Imitation Panels"
+      },
+      "mirror": {
+        "name": "Stainless Steel Mirror Panel",
+        "description": "High-quality mirror finish, enhancing spatial visual effects, suitable for modern architectural interior and exterior decoration, excellent reflection effect.",
+        "features": ["Mirror Effect", "Visual Expansion", "Modern Feel"],
+        "category": "Mirror Panels"
+      },
+      "etching": {
+        "name": "Stainless Steel Etched Panel",
+        "description": "Precision etching process, customizable patterns, demonstrating exquisite technology, widely used in signage and decoration fields.",
+        "features": ["Custom Patterns", "Precision Process", "Wide Application"],
+        "category": "Processed Panels"
+      }
+    },
     "company": {
       "name": "Guangdong Shunjiaxing Stainless Steel Co., Ltd.",
       "description": "Industry benchmark enterprise with over 200M RMB annual revenue and 300+ employees"
     },
-    "advantages": {
-      "title": "Core Advantages",
-      "items": [
-        {
-          "title": "Advanced Manufacturing",
-          "description": "Complete equipment including CNC cutting, laser cutting, welding and polishing, 3 titanium plating furnaces and professional sampling furnace"
+    "factory": {
+      "title": "Production Base Display",
+      "description": "Advanced production equipment and modern management systems ensure product quality and delivery capabilities",
+      "badge": "Factory View",
+      "facilities": {
+        "main": {
+          "name": "Main Factory",
+          "description": "Modern production base covering 10,000㎡, equipped with advanced production equipment and complete supporting facilities.",
+          "specs": ["10,000㎡", "Modern Equipment", "Smart Management"]
         },
-        {
-          "title": "Diversified Product System",
-          "description": "Specializing in 201 and 304 series colored stainless steel plates, providing one-stop solutions from materials to finished products"
+        "plating": {
+          "name": "Electroplating Factory",
+          "description": "Professional electroplating production line, using environmentally friendly processes to ensure product surface treatment quality and environmental protection.",
+          "specs": ["Eco-friendly Process", "Professional Equipment", "Quality Assurance"]
         },
-        {
-          "title": "Technology and Service Excellence",
-          "description": "Professional technical team with full-process quality control, continuous process innovation and performance optimization"
+        "mirror": {
+          "name": "Mirror Processing Factory",
+          "description": "Precision mirror processing technology, using imported equipment to ensure mirror effects reach international advanced levels.",
+          "specs": ["Imported Equipment", "Precision Process", "International Standard"]
         }
-      ]
+      }
     },
-    "products": {
-      "title": "Product Showcase",
-      "waterWave": "Stainless Steel Water Wave Panel",
-      "vintage": "Stainless Steel Vintage Panel",
-      "copper": "Stainless Steel Copper-like Panel",
-      "mirror": "Stainless Steel Mirror Panel",
-      "etching": "Stainless Steel Etched Panel"
+    "productDisplay": {
+      "title": "Premium Product Series",
+      "description": "Diversified product lines meet the needs of different application scenarios, each product reflects our craftsmanship spirit"
+    },
+    "certifications": {
+      "title": "Quality Management System Certification",
+      "description": "Obtained ISO quality management system certification, strictly implemented according to international standards, ensuring every product meets high quality requirements and provides reliable guarantee for customers.",
+      "quality": "Quality Management System",
+      "environment": "Environmental Management System",
+      "ce": "European Safety Certification"
     }
   },
   "insights": {
-    "title": "My Industry Insights",
+    "title": "My",
+    "titleHighlight": "Industry Insights",
     "subtitle": "Key Content for Building Trust",
+    "description": "13 years of deep thinking and sharing in the stainless steel industry, covering industry trends, digital transformation, international development and other in-depth insights in multiple fields.",
+    "featured": "Featured Article",
     "readMore": "Read More",
-    "sampleArticles": [
-      {
-        "title": "Digital Transformation in Stainless Steel Industry",
-        "excerpt": "In the digital economy era, how can traditional manufacturing embrace change and achieve high-quality development?",
-        "date": "2024-12-15"
-      },
-      {
-        "title": "Unique Value of Female Leadership in Manufacturing",
-        "excerpt": "Women's meticulousness and resilience inject new vitality and innovative thinking into traditional manufacturing.",
-        "date": "2024-12-10"
-      },
-      {
-        "title": "Sustainable Development: Responsibility and Opportunity in Stainless Steel Industry",
-        "excerpt": "Environmental protection and development go hand in hand, exploring the green transformation path of the stainless steel industry.",
-        "date": "2024-12-05"
-      }
-    ]
+    "moreArticles": "More Articles",
+    "categories": {
+      "all": "All",
+      "trends": "Industry Trends",
+      "digital": "Digital",
+      "international": "International", 
+      "leadership": "Leadership",
+      "management": "Management",
+      "sales": "Sales"
+    },
+    "search": {
+      "placeholder": "Search articles...",
+      "results": "articles"
+    },
+    "navigation": {
+      "backToHome": "Back to Home",
+      "backToInsights": "Back to Insights"
+    },
+    "articleNotFound": "Article not found",
+    "share": "Share",
+    "cta": {
+      "title": "Want to Learn More Industry Insights?",
+      "description": "Subscribe to KIKI's professional insights to get the latest stainless steel industry trends and developments. Weekly curated content delivered directly to your inbox, stay synchronized with industry leaders.",
+      "placeholder": "Enter your email address",
+      "subscribe": "Subscribe Now"
+    }
   },
   "contact": {
     "title": "Contact KIKI",
@@ -127,15 +264,34 @@
   },
   "footer": {
     "company": "Guangdong Shunjiaxing Stainless Steel Co., Ltd.",
+    "founder": "Founder of Shunjiaxing Stainless Steel",
+    "description": "Focusing on R&D, production and sales of high-quality stainless steel products, injecting new vitality into industry development from the unique perspective of female entrepreneurs.",
+    "quickLinks": "Quick Links",
+    "productSeries": "Product Series",
+    "industryNews": "Industry News",
+    "decorative": "Decorative Panels",
+    "mirror": "Mirror Panels", 
+    "artistic": "Artistic Panels",
+    "custom": "Custom Services",
+    "trends": "Industry Trends",
+    "innovation": "Technical Innovation",
+    "market": "Market Dynamics",
+    "news": "Company News",
     "rights": "All Rights Reserved",
-    "slogan": "Making Chinese Manufacturing More Warm"
+    "license": "Guangdong ICP No. 2024000000",
+    "businessLicense": "Business License",
+    "qualityCert": "Quality Certification",
+    "slogan": "Manufacturing",
+    "madeWith": "Made with",
+    "love": "❤️"
   },
   "common": {
     "darkMode": "Dark Mode",
-    "lightMode": "Light Mode",
+    "lightMode": "Light Mode", 
     "language": "Language",
     "loading": "Loading...",
     "error": "Error occurred",
-    "retry": "Retry"
+    "retry": "Retry",
+    "pioneer": "Stainless Steel Pioneer"
   }
 } 
