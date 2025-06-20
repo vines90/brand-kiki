@@ -15,9 +15,12 @@ export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isPurpleTheme, setIsPurpleTheme] = useState(false)
+  const [isHydrated, setIsHydrated] = useState(false)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      setIsHydrated(true)
+      
       const darkMode = localStorage.getItem('darkMode') === 'true'
       // 默认使用蒂芙尼蓝主题，除非用户明确设置为紫色
       const purpleTheme = localStorage.getItem('purpleTheme') === 'true'
