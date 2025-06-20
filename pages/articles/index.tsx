@@ -62,7 +62,7 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
   const getCategoryColor = (category: string) => {
     const colors = {
       "行业趋势": "bg-blue-100 text-blue-700 border-blue-200",
-      "数字化": "bg-purple-100 text-purple-700 border-purple-200",
+      "数字化": "bg-primary-100/20 text-primary-100 border-primary-200",
       "国际化": "bg-green-100 text-green-700 border-green-200",
       "领导力": "bg-red-100 text-red-700 border-red-200",
       "管理": "bg-orange-100 text-orange-700 border-orange-200",
@@ -91,7 +91,7 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
             <motion.div variants={itemVariants} className="text-center mb-16">
               <Link 
                 href="/"
-                className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-medium transition-colors mb-8"
+                className="inline-flex items-center space-x-2 text-primary-100 hover:text-primary-200 font-medium transition-colors mb-8"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>返回首页</span>
@@ -118,7 +118,7 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
                     placeholder="搜索文章标题、内容或标签..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-300 dark:border-gray-600 rounded-full bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-100 focus:border-transparent"
                   />
                 </div>
 
@@ -130,8 +130,8 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
                       onClick={() => setSelectedCategory(category)}
                       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                         selectedCategory === category
-                          ? 'bg-purple-600 text-white shadow-lg'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300'
+                          ? 'bg-primary-100 text-white shadow-lg'
+                          : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100/20 dark:hover:bg-primary-100/10 hover:text-primary-100 dark:hover:text-primary-200'
                       }`}
                     >
                       {category}
@@ -143,7 +143,7 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
               {/* 结果统计 */}
               <div className="mt-6 text-center">
                 <p className="text-gray-600 dark:text-gray-400">
-                  共找到 <span className="font-semibold text-purple-600">{filteredArticles.length}</span> 篇文章
+                  共找到 <span className="font-semibold text-primary-100">{filteredArticles.length}</span> 篇文章
                   {selectedCategory !== "全部" && (
                     <span> · 分类：<span className="font-semibold">{selectedCategory}</span></span>
                   )}
@@ -189,7 +189,7 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
                           </div>
 
                           {/* 文章标题 */}
-                          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-purple-600 transition-colors duration-300">
+                          <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3 leading-tight group-hover:text-primary-100 transition-colors duration-300">
                             {article.title}
                           </h2>
 
@@ -222,7 +222,7 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
                                 <span>{article.readTime}</span>
                               </div>
                             </div>
-                            <div className="text-purple-600 group-hover:text-purple-700">
+                            <div className="text-primary-100 group-hover:text-primary-200">
                               阅读文章 →
                             </div>
                           </div>
@@ -236,8 +236,8 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
 
             {/* 页面底部 */}
             <motion.div variants={itemVariants} className="text-center mt-16">
-              <div className="bg-gradient-to-r from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-8 rounded-3xl">
-                <BookOpen className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+              <div className="bg-gradient-to-r from-primary-50 to-primary-100/20 dark:from-primary-500/20 dark:to-primary-400/20 p-8 rounded-3xl">
+                <BookOpen className="w-12 h-12 text-primary-100 mx-auto mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                   想要了解更多？
                 </h3>
@@ -248,9 +248,9 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
                   <input
                     type="email"
                     placeholder="输入您的邮箱地址"
-                    className="flex-1 px-4 py-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    className="flex-1 px-4 py-3 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary-100"
                   />
-                  <button className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300">
+                  <button className="bg-primary-100 hover:bg-primary-200 text-white px-6 py-3 rounded-full font-semibold transition-colors duration-300">
                     订阅更新
                   </button>
                 </div>

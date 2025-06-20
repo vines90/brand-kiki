@@ -6,10 +6,16 @@ import { ChevronDown, Sparkles, Star, Award, Users } from 'lucide-react'
 
 export default function HeroSection() {
   const { t } = useTranslation('common')
+  const { i18n } = useTranslation()
   const [displayedText, setDisplayedText] = useState('')
   const fullText = t('hero.greeting')
   const { scrollY } = useScroll()
   const y = useTransform(scrollY, [0, 500], [0, 250])
+  
+  // 统一字体大小
+  const getTextSizeClasses = () => {
+    return "text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+  }
   
   useEffect(() => {
     let currentIndex = 0
@@ -20,7 +26,7 @@ export default function HeroSection() {
       } else {
         clearInterval(interval)
       }
-    }, 150)
+    }, 120)
 
     return () => clearInterval(interval)
   }, [fullText])
@@ -37,19 +43,19 @@ export default function HeroSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.15,
         duration: 0.8
       }
     }
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.6,
         ease: "easeOut"
       }
     }
@@ -58,9 +64,11 @@ export default function HeroSection() {
   return (
     <section id="hero" className="min-h-screen relative overflow-hidden flex items-center justify-center">
       {/* 全屏渐变背景 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-100 via-primary-200 to-primary-400">
-        {/* 动态渐变覆盖 */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-100/90 via-transparent to-primary-200/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-primary-400 to-primary-200">
+        {/* 动态渐变覆盖 - 增强对角线蔓延 */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/98 via-primary-400/90 to-primary-300/85"></div>
+        {/* 额外的对角线渐变层 */}
+        <div className="absolute inset-0 bg-gradient-to-tl from-primary-400/80 via-transparent to-primary-500/60"></div>
       </div>
 
       {/* 浮动的抽象几何元素 */}
@@ -79,47 +87,77 @@ export default function HeroSection() {
       </motion.div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16 items-center">
           {/* 左侧内容区域 */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
-            className="text-left space-y-8"
+            className="text-left space-y-6 lg:space-y-8 lg:col-span-2"
           >
-            {/* 超大标题 */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <h1 className="hero-title text-white leading-none">
-                KIKI
-                <br />
-                <span className="gradient-text-animated">
-                  {displayedText}
+            {/* 品牌标识 */}
+            <motion.div variants={itemVariants} className="space-y-3">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-2 h-12 bg-gradient-to-b from-accent-100 to-accent-200 rounded-full"></div>
+                <span className="text-white/80 text-sm font-medium tracking-widest uppercase">
+                  Personal Brand
                 </span>
-                <motion.span
-                  animate={{ opacity: [1, 0] }}
-                  transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-                  className="text-white/80"
-                >
-                  |
-                </motion.span>
-              </h1>
+              </div>
               
-              {/* 英文副标题 */}
-              <p className="text-xl md:text-2xl text-white/90 font-medium tracking-wide">
+              {/* 优化后的主标题 */}
+              <h1 className="text-white font-black leading-[0.85] tracking-tight">
+                <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+                  KIKI
+                </span>
+                <span className={`block ${getTextSizeClasses()} mt-2 lg:mt-4 gradient-text-animated font-bold whitespace-nowrap`}>
+                  {displayedText}
+                  <motion.span
+                    animate={{ opacity: [1, 0] }}
+                    transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
+                    className="text-white/60 ml-1"
+                  >
+                    |
+                  </motion.span>
+                </span>
+              </h1>
+            </motion.div>
+
+            {/* 英文副标题 - 优化排版 */}
+            <motion.div variants={itemVariants}>
+              <p className="text-lg sm:text-xl lg:text-2xl text-white/90 font-medium tracking-wide leading-relaxed">
                 Stainless Steel Industry Pioneer & Female Leader
               </p>
             </motion.div>
 
-            {/* 价值主张 */}
-            <motion.div variants={itemVariants}>
-              <p className="text-2xl md:text-3xl font-bold text-white leading-relaxed">
+            {/* 价值主张 - 改进层次结构 */}
+            <motion.div variants={itemVariants} className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 lg:p-8 border border-white/20">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white leading-tight mb-3">
                 {t('hero.tagline')}
+              </h2>
+              <p className="text-white/80 text-base lg:text-lg leading-relaxed">
+                {t('hero.description')}
               </p>
             </motion.div>
 
-            {/* 动态标签云 */}
-            <motion.div variants={itemVariants} className="space-y-4">
-              <div className="flex flex-wrap gap-4">
+            {/* 数据展示 - 新增 */}
+            <motion.div variants={itemVariants} className="grid grid-cols-3 gap-4 lg:gap-6">
+              <div className="text-center">
+                <div className="text-2xl lg:text-3xl font-black text-white mb-1">{t('hero.stats.experience')}</div>
+                <div className="text-white/70 text-xs lg:text-sm font-medium">{t('hero.stats.experienceLabel')}</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl lg:text-3xl font-black text-white mb-1">{t('hero.stats.employees')}</div>
+                <div className="text-white/70 text-xs lg:text-sm font-medium">{t('hero.stats.employeesLabel')}</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl lg:text-3xl font-black text-white mb-1">{t('hero.stats.revenue')}</div>
+                <div className="text-white/70 text-xs lg:text-sm font-medium">{t('hero.stats.revenueLabel')}</div>
+              </div>
+            </motion.div>
+
+            {/* 动态标签云 - 优化样式 */}
+            <motion.div variants={itemVariants} className="pt-2">
+              <div className="flex flex-wrap gap-3">
                 {tags.map((tag, index) => (
                   <motion.div
                     key={index}
@@ -127,7 +165,7 @@ export default function HeroSection() {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: tag.delay, duration: 0.5 }}
                     whileHover={{ scale: 1.05, y: -2 }}
-                    className="glass px-4 py-2 rounded-full text-white/90 text-sm font-medium flex items-center gap-2 border border-white/20 hover:border-white/40 transition-all duration-300"
+                    className="glass px-4 py-2.5 rounded-full text-white/90 text-sm font-medium flex items-center gap-2 border border-white/30 hover:border-white/50 hover:bg-white/15 transition-all duration-300 shadow-lg"
                   >
                     {tag.icon}
                     {tag.text}
@@ -135,12 +173,24 @@ export default function HeroSection() {
                 ))}
               </div>
             </motion.div>
+
+            {/* CTA按钮 - 新增 */}
+            <motion.div variants={itemVariants} className="pt-4">
+              <motion.button
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-gradient-to-r from-accent-100 to-accent-200 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-accent-100/25 transition-all duration-300 flex items-center space-x-2"
+              >
+                <span>{t('hero.cta')}</span>
+                <ChevronDown className="w-5 h-5" />
+              </motion.button>
+            </motion.div>
           </motion.div>
 
           {/* 右侧个人照片区域 */}
           <motion.div
             variants={itemVariants}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center lg:justify-end lg:col-span-1"
           >
             <div className="relative">
               {/* 背景装饰圆环 */}

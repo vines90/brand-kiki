@@ -9,7 +9,7 @@ export default function BusinessSection() {
   const stats = [
     { icon: <Factory className="w-8 h-8" />, value: "10,000", suffix: '㎡', label: t('business.stats.base') },
     { icon: <Users className="w-8 h-8" />, value: "300", suffix: '+', label: t('business.stats.team') },
-    { icon: <TrendingUp className="w-8 h-8" />, value: "2", suffix: '亿+', label: t('business.stats.revenue') },
+    { icon: <TrendingUp className="w-8 h-8" />, value: "200", suffix: 'M+', label: t('business.stats.revenue') },
     { icon: <Globe className="w-8 h-8" />, value: "500", suffix: '+', label: t('business.stats.clients') }
   ]
 
@@ -121,11 +121,11 @@ export default function BusinessSection() {
         <div className="space-y-20">
           {/* Section Header */}
           <div className="text-center space-y-6">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+            <h2 className="section-title text-text-primary dark:text-white">
               {t('business.title')}
-              <span className="text-purple-600"> {t('business.titleHighlight')}</span>
+              <span className="gradient-text"> {t('business.titleHighlight')}</span>
             </h2>
-            <p className="text-xl md:text-2xl text-purple-600 font-semibold">
+            <p className="text-xl md:text-2xl text-primary-100 font-semibold">
               {t('business.subtitle')}
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
@@ -140,7 +140,7 @@ export default function BusinessSection() {
                 key={index}
                 className="bg-white dark:bg-gray-900 p-6 rounded-3xl shadow-lg text-center border border-gray-100 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
               >
-                <div className="text-purple-600 mb-4 flex justify-center">
+                <div className="text-primary-100 mb-4 flex justify-center">
                   {stat.icon}
                 </div>
                 <div className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
@@ -170,7 +170,7 @@ export default function BusinessSection() {
                   key={index}
                   className="bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
                 >
-                  <div className="text-purple-600 mb-6">
+                  <div className="text-primary-100 mb-6">
                     {advantage.icon}
                   </div>
                   <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
@@ -183,7 +183,7 @@ export default function BusinessSection() {
                     {advantage.highlights.map((highlight, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-medium rounded-full"
+                        className="px-3 py-1 bg-primary-100/20 dark:bg-primary-100/10 text-primary-100 dark:text-primary-200 text-sm font-medium rounded-full"
                       >
                         {highlight}
                       </span>
@@ -221,7 +221,7 @@ export default function BusinessSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 right-4">
-                      <div className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <div className="bg-primary-100 text-white px-3 py-1 rounded-full text-sm font-medium">
                         {t('business.factory.badge')}
                       </div>
                     </div>
@@ -235,7 +235,7 @@ export default function BusinessSection() {
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {(factory.specs || []).map((spec, idx) => (
-                        <div key={idx} className="flex items-center space-x-1 text-xs text-purple-600">
+                        <div key={idx} className="flex items-center space-x-1 text-xs text-primary-100">
                           <CheckCircle className="w-3 h-3" />
                           <span>{spec}</span>
                         </div>
@@ -274,7 +274,7 @@ export default function BusinessSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute top-4 left-4">
-                      <span className="bg-purple-600/90 text-white px-3 py-1 rounded-full text-xs font-medium">
+                      <span className="bg-primary-100/90 text-white px-3 py-1 rounded-full text-xs font-medium">
                         {product.category}
                       </span>
                     </div>
@@ -282,7 +282,7 @@ export default function BusinessSection() {
                       <div className="space-y-2">
                         {product.features.map((feature, idx) => (
                           <div key={idx} className="flex items-center space-x-2 text-sm">
-                            <CheckCircle className="w-4 h-4 text-purple-300" />
+                            <CheckCircle className="w-4 h-4 text-primary-200" />
                             <span>{feature}</span>
                           </div>
                         ))}
@@ -305,7 +305,7 @@ export default function BusinessSection() {
           {/* 认证展示 */}
           <div className="text-center">
             <div className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-12 rounded-3xl max-w-4xl mx-auto">
-              <Award className="w-20 h-20 text-purple-600 mx-auto mb-6" />
+              <Award className="w-20 h-20 text-primary-100 mx-auto mb-6" />
               <h3 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                 {t('business.certifications.title')}
               </h3>
@@ -315,7 +315,7 @@ export default function BusinessSection() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div className="text-center">
-                  <Target className="w-12 h-12 text-purple-600 mx-auto mb-3" />
+                  <Target className="w-12 h-12 text-primary-100 mx-auto mb-3" />
                   <div className="text-xl font-bold text-gray-900 dark:text-white">ISO 9001</div>
                   <div className="text-gray-600 dark:text-gray-400 text-sm">{t('business.certifications.quality')}</div>
                 </div>

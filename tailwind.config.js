@@ -99,6 +99,8 @@ module.exports = {
       boxShadow: {
         'glow': '0 0 20px rgba(123, 90, 163, 0.3)',
         'glow-lg': '0 0 40px rgba(123, 90, 163, 0.4)',
+        'glow-tiffany': '0 0 20px rgba(13, 217, 196, 0.3)',
+        'glow-tiffany-lg': '0 0 40px rgba(13, 217, 196, 0.4)',
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',

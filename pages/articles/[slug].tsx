@@ -80,11 +80,11 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
             {/* 面包屑导航 */}
             <motion.nav variants={itemVariants} className="mb-8">
               <div className="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-                <Link href="/" className="hover:text-purple-600 transition-colors">
+                <Link href="/" className="hover:text-primary-100 transition-colors">
                   首页
                 </Link>
                 <ChevronRight className="w-4 h-4" />
-                <Link href="/#insights" className="hover:text-purple-600 transition-colors">
+                <Link href="/#insights" className="hover:text-primary-100 transition-colors">
                   行业观点
                 </Link>
                 <ChevronRight className="w-4 h-4" />
@@ -96,7 +96,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
             <motion.div variants={itemVariants} className="mb-8">
               <Link 
                 href="/#insights"
-                className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-medium transition-colors"
+                className="inline-flex items-center space-x-2 text-primary-100 hover:text-primary-200 font-medium transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>返回观点列表</span>
@@ -107,7 +107,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
             <motion.header variants={itemVariants} className="mb-12">
               {/* 分类标签 */}
               <div className="mb-6">
-                <span className="inline-block px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-sm font-medium rounded-full">
+                <span className="inline-block px-4 py-2 bg-primary-100/20 dark:bg-primary-100/10 text-primary-100 dark:text-primary-200 text-sm font-medium rounded-full">
                   {article.category}
                 </span>
               </div>
@@ -142,7 +142,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                     <span>{article.comments}</span>
                   </div>
                 )}
-                <button className="flex items-center space-x-2 text-purple-600 hover:text-purple-700 transition-colors">
+                <button className="flex items-center space-x-2 text-primary-100 hover:text-primary-200 transition-colors">
                   <Share2 className="w-4 h-4" />
                   <span>分享</span>
                 </button>
@@ -176,13 +176,13 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                   }
                   .prose-purple :global(li::before) {
                     content: '';
-                    @apply absolute -left-6 top-2 w-2 h-2 bg-purple-500 rounded-full;
+                    @apply absolute -left-6 top-2 w-2 h-2 bg-primary-100 rounded-full;
                   }
                   .prose-purple :global(strong) {
                     @apply font-semibold text-gray-900 dark:text-white;
                   }
                   .prose-purple :global(blockquote) {
-                    @apply border-l-4 border-purple-500 pl-6 my-6 italic text-gray-600 dark:text-gray-400;
+                    @apply border-l-4 border-primary-100 pl-6 my-6 italic text-gray-600 dark:text-gray-400;
                   }
                 `}</style>
                 <ReactMarkdown>
@@ -212,11 +212,11 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
             {/* 作者信息 */}
             <motion.div 
               variants={itemVariants} 
-              className="bg-gradient-to-r from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 p-8 rounded-3xl mb-12"
+              className="bg-gradient-to-r from-primary-50 to-primary-100/20 dark:from-primary-500/20 dark:to-primary-400/20 p-8 rounded-3xl mb-12"
             >
               <div className="flex items-start space-x-4">
-                <div className="w-16 h-16 bg-purple-200 dark:bg-purple-700 rounded-full flex items-center justify-center flex-shrink-0">
-                  <User className="w-8 h-8 text-purple-600 dark:text-purple-300" />
+                <div className="w-16 h-16 bg-primary-200 dark:bg-primary-400 rounded-full flex items-center justify-center flex-shrink-0">
+                  <User className="w-8 h-8 text-primary-500 dark:text-primary-200" />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
@@ -244,11 +244,11 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                     >
                       <div className="bg-white dark:bg-gray-800 p-6 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-300">
                         <div className="mb-4">
-                          <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-medium rounded-full">
+                          <span className="inline-block px-3 py-1 bg-primary-100/20 dark:bg-primary-100/10 text-primary-100 dark:text-primary-200 text-xs font-medium rounded-full">
                             {relatedArticle.category}
                           </span>
                         </div>
-                        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 transition-colors">
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-100 transition-colors">
                           {relatedArticle.title}
                         </h3>
                         <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-4 line-clamp-3">
@@ -277,7 +277,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
             <motion.div variants={itemVariants} className="text-center">
               <Link
                 href="/#insights"
-                className="inline-flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="inline-flex items-center space-x-2 bg-primary-100 hover:bg-primary-200 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <span>查看更多观点</span>
                 <ArrowLeft className="w-5 h-5 rotate-180" />

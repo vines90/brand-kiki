@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router'
 import { motion } from 'framer-motion'
-import { Sun, Moon, Globe, Menu, X, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
+import { Sun, Moon, Globe, Menu, X, Mail, Phone, MapPin, ExternalLink, Palette } from 'lucide-react'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -14,12 +14,22 @@ export default function Layout({ children }: LayoutProps) {
   const [isDark, setIsDark] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isPurpleTheme, setIsPurpleTheme] = useState(false)
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const darkMode = localStorage.getItem('darkMode') === 'true'
+      // 默认使用蒂芙尼蓝主题，除非用户明确设置为紫色
+      const purpleTheme = localStorage.getItem('purpleTheme') === 'true'
       setIsDark(darkMode)
+      setIsPurpleTheme(purpleTheme)
       document.documentElement.classList.toggle('dark', darkMode)
+      document.documentElement.classList.toggle('theme-purple', purpleTheme)
+      
+      // 如果是首次访问，默认使用蒂芙尼蓝主题（不添加类）
+      if (localStorage.getItem('purpleTheme') === null) {
+        localStorage.setItem('purpleTheme', 'false')
+      }
 
       const handleScroll = () => {
         setIsScrolled(window.scrollY > 50)
@@ -43,6 +53,13 @@ export default function Layout({ children }: LayoutProps) {
       // Scroll to top after language change
       window.scrollTo({ top: 0, behavior: 'smooth' })
     })
+  }
+
+  const toggleTheme = () => {
+    const newPurpleTheme = !isPurpleTheme
+    setIsPurpleTheme(newPurpleTheme)
+    localStorage.setItem('purpleTheme', newPurpleTheme.toString())
+    document.documentElement.classList.toggle('theme-purple', newPurpleTheme)
   }
 
   const navItems = [
@@ -144,6 +161,18 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Enhanced Controls */}
             <div className="flex items-center space-x-2">
+              <motion.button
+                onClick={toggleTheme}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+                className="p-3 rounded-full hover:bg-primary-100/10 dark:hover:bg-primary-200/10 transition-colors duration-200"
+                aria-label={isPurpleTheme ? '切换到蒂芙尼蓝主题' : '切换到紫色主题'}
+              >
+                <Palette size={20} className={`transition-colors duration-300 ${
+                  isScrolled ? 'text-primary-100' : 'text-white'
+                }`} />
+              </motion.button>
+              
               <motion.button
                 onClick={toggleDarkMode}
                 whileHover={{ scale: 1.1, rotate: 180 }}
@@ -255,7 +284,7 @@ export default function Layout({ children }: LayoutProps) {
             <div className="lg:col-span-2 space-y-8">
               <div>
                 <h3 className="text-4xl font-bold text-white mb-3">KIKI</h3>
-                <p className="text-purple-200 text-xl font-medium mb-6">{t('footer.founder')}</p>
+                <p className="text-primary-200 text-xl font-medium mb-6">{t('footer.founder')}</p>
                 <p className="text-white/80 leading-relaxed text-lg">
                   {t('footer.description')}
                 </p>
@@ -264,21 +293,21 @@ export default function Layout({ children }: LayoutProps) {
               <div className="space-y-4">
                 <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform duration-300">
                   <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-purple-200" />
+                    <Mail className="w-5 h-5 text-primary-200" />
                   </div>
                   <span className="text-white/90 font-medium">contact@shunjiaxing.com</span>
                 </div>
                 <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform duration-300">
                   <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-purple-200" />
+                    <Phone className="w-5 h-5 text-primary-200" />
                   </div>
                   <span className="text-white/90 font-medium">+86 757 8888 8888</span>
                 </div>
                 <div className="flex items-center space-x-4 group hover:translate-x-2 transition-transform duration-300">
                   <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-purple-200" />
+                    <MapPin className="w-5 h-5 text-primary-200" />
                   </div>
-                  <span className="text-white/90 font-medium">广东省佛山市顺德区</span>
+                  <span className="text-white/90 font-medium">{t('footer.address')}</span>
                 </div>
               </div>
             </div>
@@ -295,7 +324,7 @@ export default function Layout({ children }: LayoutProps) {
                     <li key={linkIndex}>
                       <button
                         onClick={() => scrollToSection(link.href)}
-                        className="text-white/70 hover:text-purple-200 transition-all duration-300 text-sm flex items-center space-x-2 group hover:translate-x-1"
+                        className="text-white/70 hover:text-primary-200 transition-all duration-300 text-sm flex items-center space-x-2 group hover:translate-x-1"
                       >
                         <span className="relative">
                           {link.name}
@@ -317,11 +346,11 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             
             <div className="flex items-center space-x-8 text-sm text-white/70">
-              <span className="hover:text-purple-200 transition-colors cursor-pointer">{t('footer.license')}</span>
+              <span className="hover:text-primary-200 transition-colors cursor-pointer">{t('footer.license')}</span>
               <span className="text-white/30">•</span>
-              <span className="hover:text-purple-200 transition-colors cursor-pointer">{t('footer.businessLicense')}</span>
+              <span className="hover:text-primary-200 transition-colors cursor-pointer">{t('footer.businessLicense')}</span>
               <span className="text-white/30">•</span>
-              <span className="hover:text-purple-200 transition-colors cursor-pointer">{t('footer.qualityCert')}</span>
+              <span className="hover:text-primary-200 transition-colors cursor-pointer">{t('footer.qualityCert')}</span>
             </div>
             
             <div className="flex items-center space-x-2 text-sm text-white/70">
