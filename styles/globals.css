@@ -133,15 +133,32 @@ body {
   transition: all 0.3s ease;
 }
 
-/* 确保服务端渲染时的默认样式 */
-html:not(.theme-purple) {
+/* 确保服务端渲染时的默认样式 - 使用更高的优先级 */
+html:not(.theme-purple),
+html:not(.theme-purple):root {
   /* 强制使用蒂芙尼蓝主题作为默认 */
-  --primary-50: #f0fdfa;
-  --primary-100: #0dd9c4;
-  --primary-200: #5eead4;
-  --primary-300: #a7f3d0;
-  --primary-400: #14b8a6;
-  --primary-500: #0f766e;
+  --primary-50: #f0fdfa !important;
+  --primary-100: #0dd9c4 !important;
+  --primary-200: #5eead4 !important;
+  --primary-300: #a7f3d0 !important;
+  --primary-400: #14b8a6 !important;
+  --primary-500: #0f766e !important;
+  
+  /* 确保其他变量也正确 */
+  --accent-100: #f97316 !important;
+  --accent-200: #fed7aa !important;
+  --accent-300: #fb923c !important;
+  
+  --text-primary: #134e4a !important;
+  --text-secondary: #0f766e !important;
+  
+  --bg-primary: #f0fdfa !important;
+  --bg-secondary: #ccfbf1 !important;
+  --bg-tertiary: #99f6e4 !important;
+  
+  --gradient-primary: linear-gradient(135deg, #0f766e 0%, #0dd9c4 100%) !important;
+  --gradient-accent: linear-gradient(135deg, #f97316 0%, #fb923c 100%) !important;
+  --gradient-hero: linear-gradient(135deg, #0f766e 0%, #0dd9c4 50%, #5eead4 100%) !important;
 }
 
 a {
