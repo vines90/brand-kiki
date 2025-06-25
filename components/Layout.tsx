@@ -36,6 +36,20 @@ export default function Layout({ children }: LayoutProps) {
     }
   }, [])
 
+  // 防止移动端菜单打开时背景滚动
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    // 清理函数
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [isMenuOpen])
+
   const toggleDarkMode = () => {
     const newDarkMode = !isDark
     setIsDark(newDarkMode)
@@ -158,6 +172,29 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Enhanced Controls */}
             <div className="flex items-center space-x-2">
+              {/* Mobile menu button - 移到控制按钮的最前面 */}
+              <motion.button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className="md:hidden p-3 rounded-full hover:bg-primary-100/10 dark:hover:bg-primary-200/10 transition-colors duration-200"
+                aria-label="菜单"
+              >
+                {isMenuOpen ? (
+                  <X size={24} className={`transition-colors duration-300 ${
+                    isScrolled 
+                      ? 'text-gray-700 dark:text-primary-200' 
+                      : 'text-white'
+                  }`} />
+                ) : (
+                  <Menu size={24} className={`transition-colors duration-300 ${
+                    isScrolled 
+                      ? 'text-gray-700 dark:text-primary-200' 
+                      : 'text-white'
+                  }`} />
+                )}
+              </motion.button>
+
               <motion.button
                 onClick={toggleTheme}
                 whileHover={{ scale: 1.1 }}
@@ -199,7 +236,7 @@ export default function Layout({ children }: LayoutProps) {
                     ? 'text-gray-700 dark:text-primary-200' 
                     : 'text-white'
                 }`} />
-                <span className={`text-sm font-semibold transition-colors duration-300 ${
+                <span className={`text-sm font-semibold transition-colors duration-300 hidden sm:block ${
                   isScrolled 
                     ? 'text-gray-900 dark:text-white' 
                     : 'text-white'
@@ -207,56 +244,67 @@ export default function Layout({ children }: LayoutProps) {
                   {router.locale === 'zh' ? 'EN' : '中'}
                 </span>
               </motion.button>
-
-              {/* Mobile menu button */}
-              <motion.button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-                className="md:hidden p-3 rounded-full hover:bg-primary-100/10 dark:hover:bg-primary-200/10 transition-colors duration-200"
-                aria-label="菜单"
-              >
-                {isMenuOpen ? (
-                  <X size={20} className={`transition-colors duration-300 ${
-                    isScrolled 
-                      ? 'text-gray-700 dark:text-primary-200' 
-                      : 'text-white'
-                  }`} />
-                ) : (
-                  <Menu size={20} className={`transition-colors duration-300 ${
-                    isScrolled 
-                      ? 'text-gray-700 dark:text-primary-200' 
-                      : 'text-white'
-                  }`} />
-                )}
-              </motion.button>
             </div>
           </div>
         </div>
 
         {/* Enhanced Mobile Navigation */}
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden glass bg-white/95 dark:bg-gray-900/95 border-t border-gray-200/20 dark:border-gray-700/20"
-          >
-            <div className="px-4 pt-4 pb-6 space-y-2">
-              {navItems.map((item, index) => (
-                <motion.button
-                  key={item.key}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-4 py-3 text-base font-semibold text-text-primary dark:text-white hover:text-primary-100 dark:hover:text-primary-200 hover:bg-primary-100/5 dark:hover:bg-primary-200/5 rounded-lg transition-all duration-200"
-                >
-                  {item.label}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
+          <>
+            {/* 背景遮罩 */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="md:hidden fixed inset-0 bg-black/50 z-40"
+              onClick={() => setIsMenuOpen(false)}
+            />
+            
+            {/* 菜单内容 */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              className="md:hidden fixed inset-x-0 top-20 z-50 glass bg-white/95 dark:bg-gray-900/95 border-b border-gray-200/20 dark:border-gray-700/20 shadow-lg"
+            >
+              <div className="px-4 pt-4 pb-6 space-y-2 max-h-[calc(100vh-5rem)] overflow-y-auto">
+                {navItems.map((item, index) => (
+                  <motion.button
+                    key={item.key}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={() => scrollToSection(item.href)}
+                    className="block w-full text-left px-4 py-4 text-lg font-semibold text-text-primary dark:text-white hover:text-primary-100 dark:hover:text-primary-200 hover:bg-primary-100/5 dark:hover:bg-primary-200/5 rounded-xl transition-all duration-200 border border-transparent hover:border-primary-100/20"
+                  >
+                    <span className="flex items-center justify-between">
+                      {item.label}
+                      <svg className="w-5 h-5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </motion.button>
+                ))}
+                
+                {/* 移动端额外的联系信息 */}
+                <div className="pt-4 mt-4 border-t border-gray-200/20 dark:border-gray-700/20">
+                  <p className="text-sm text-text-secondary dark:text-gray-400 mb-3 px-4">
+                    {t('nav.contact')}
+                  </p>
+                  <div className="space-y-2 px-4">
+                    <a href="mailto:contact@shunjiaxing.com" className="flex items-center space-x-3 text-sm text-text-secondary hover:text-primary-100 transition-colors">
+                      <Mail className="w-4 h-4" />
+                      <span>contact@shunjiaxing.com</span>
+                    </a>
+                    <a href="tel:+8675788888888" className="flex items-center space-x-3 text-sm text-text-secondary hover:text-primary-100 transition-colors">
+                      <Phone className="w-4 h-4" />
+                      <span>+86 757 8888 8888</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </>
         )}
       </nav>
 

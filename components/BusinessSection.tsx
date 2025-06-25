@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
 import { Factory, Award, Zap, Shield, Users, TrendingUp, Globe, Target, CheckCircle } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function BusinessSection() {
   const { t } = useTranslation('common')
@@ -115,23 +116,49 @@ export default function BusinessSection() {
     }
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5 } }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   return (
     <section id="business" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-20">
-          {/* Section Header */}
-          <div className="text-center space-y-6">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="space-y-20"
+        >
+          {/* Section Header - 优化SEO */}
+          <motion.div variants={itemVariants} className="text-center space-y-6">
             <h2 className="section-title text-text-primary dark:text-white">
               {t('business.title')}
-              <span className="gradient-text"> {t('business.titleHighlight')}</span>
+              <span className="gradient-text"> {t('business.highlight')}</span>
             </h2>
             <p className="text-xl md:text-2xl text-primary-100 font-semibold">
-              {t('business.subtitle')}
+              广东顺佳兴不锈钢有限公司 - 专业彩装不锈钢制造商
             </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              {t('business.description')}
-            </p>
-          </div>
+            <div className="text-lg text-text-secondary dark:text-gray-300 max-w-4xl mx-auto leading-relaxed space-y-4">
+              <p>
+                {t('business.description')}
+              </p>
+              <p className="text-base">
+                <strong className="text-primary-100">核心产品：</strong>
+                彩装不锈钢板材、装饰不锈钢制品、镜面不锈钢、不锈钢深加工产品
+              </p>
+              <p className="text-base">
+                <strong className="text-primary-100">服务地区：</strong>
+                广东佛山、珠三角、华南地区及全球市场
+              </p>
+            </div>
+          </motion.div>
 
           {/* 企业实力数据 */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -343,7 +370,7 @@ export default function BusinessSection() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,0 +1,59 @@
+User-agent: *
+Allow: /
+
+# 重要页面
+Allow: /
+Allow: /en
+Allow: /articles
+Allow: /articles/*
+
+# 静态资源
+Allow: /images/
+Allow: /docs/
+Allow: /_next/static/
+Allow: /favicon.ico
+Allow: /sitemap.xml
+
+# 禁止访问的目录
+Disallow: /_next/
+Disallow: /api/
+Disallow: /.next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.vscode/
+
+# 针对百度爬虫的特殊设置
+User-agent: Baiduspider
+Allow: /
+Allow: /en
+Allow: /articles
+Allow: /articles/*
+Crawl-delay: 1
+
+# 针对Google爬虫的设置
+User-agent: Googlebot
+Allow: /
+Allow: /en
+Allow: /articles
+Allow: /articles/*
+
+# 针对360搜索的设置
+User-agent: 360Spider
+Allow: /
+Allow: /en
+Allow: /articles
+Allow: /articles/*
+Crawl-delay: 1
+
+# 针对搜狗搜索的设置
+User-agent: Sogou web spider
+Allow: /
+Allow: /en
+Allow: /articles
+Allow: /articles/*
+Crawl-delay: 1
+
+# 站点地图位置
+Sitemap: https://kiki-brand.com/sitemap.xml
+
+# 备注：专注于顺佳兴不锈钢、彩装不锈钢、广东不锈钢相关内容 

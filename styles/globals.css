@@ -424,39 +424,114 @@ a {
 /* 响应式工具类 */
 @media (max-width: 640px) {
   .bento-card {
-    padding: 1.5rem;
-    border-radius: 20px;
+    padding: 1rem;
+    border-radius: 1.5rem;
   }
   
   .hero-title {
-    letter-spacing: -0.01em;
+    font-size: clamp(2.5rem, 12vw, 4rem);
+    line-height: 0.9;
   }
 
-  /* 移动端文字优化 */
   .hero-main-title {
-    font-size: clamp(2rem, 15vw, 3.5rem);
+    font-size: clamp(2rem, 10vw, 3.5rem);
     line-height: 0.9;
   }
 
   .hero-sub-title {
-    font-size: clamp(1.5rem, 10vw, 3rem);
-    line-height: 1.1;
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    line-height: 1;
   }
 
   .hero-tagline {
-    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-size: clamp(1rem, 4vw, 1.25rem);
     line-height: 1.4;
+    margin-top: 1rem;
+  }
+  
+  .section-title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    line-height: 1.1;
+  }
+  
+  /* 移动端按钮优化 */
+  .btn-primary, .btn-ghost {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.875rem;
+    min-height: 44px; /* 确保触摸友好 */
+  }
+  
+  /* 移动端导航优化 */
+  nav .p-3 {
+    padding: 0.875rem; /* 增大触摸区域 */
   }
 }
 
-/* 平板端优化 */
-@media (min-width: 641px) and (max-width: 1024px) {
+/* 小平板响应式优化 */
+@media (min-width: 641px) and (max-width: 768px) {
   .hero-main-title {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2.5rem, 8vw, 4rem);
   }
 
   .hero-sub-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  
+  .section-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+}
+
+/* 平板横屏优化 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-main-title {
+    font-size: clamp(3rem, 7vw, 5rem);
+  }
+
+  .hero-sub-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary, .btn-ghost, button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* 移除悬停效果 */
+  .bento-card:hover {
+    transform: none;
+    box-shadow: 0 4px 20px rgba(123, 90, 163, 0.1);
+  }
+  
+  .btn-primary:hover, .btn-ghost:hover {
+    transform: none;
+  }
+}
+
+/* 高密度屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .gradient-text, .gradient-text-animated {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* 横屏手机优化 */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 100vh;
+    padding: 2rem 0;
+  }
+  
+  .hero-main-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .section-title {
+    font-size: clamp(1.5rem, 6vw, 2rem);
   }
 }
 
