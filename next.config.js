@@ -17,13 +17,6 @@ const nextConfig = {
   // 压缩优化
   compress: true,
   
-  // 性能优化
-  experimental: {
-    optimizeCss: true,
-    legacyBrowsers: false,
-    browsersListForSwc: true,
-  },
-  
   // 重写规则 - SEO友好的URL
   async rewrites() {
     return [
@@ -124,7 +117,7 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
   
-  // Webpack优化
+  // Webpack优化 - 简化配置
   webpack: (config, { dev, isServer }) => {
     if (!dev && !isServer) {
       // 生产环境优化
