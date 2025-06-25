@@ -429,67 +429,97 @@ a {
   }
   
   .hero-title {
-    font-size: clamp(2.5rem, 12vw, 4rem);
+    font-size: clamp(2rem, 10vw, 3rem);
     line-height: 0.9;
   }
 
   .hero-main-title {
-    font-size: clamp(2rem, 10vw, 3.5rem);
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
     line-height: 0.9;
   }
 
   .hero-sub-title {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-size: clamp(1.25rem, 6vw, 2rem);
     line-height: 1;
   }
 
   .hero-tagline {
-    font-size: clamp(1rem, 4vw, 1.25rem);
+    font-size: clamp(0.875rem, 3.5vw, 1.125rem);
     line-height: 1.4;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   
   .section-title {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    font-size: clamp(1.5rem, 7vw, 2rem);
     line-height: 1.1;
   }
   
   /* 移动端按钮优化 */
   .btn-primary, .btn-ghost {
-    padding: 0.875rem 1.5rem;
+    padding: 0.75rem 1.25rem;
     font-size: 0.875rem;
     min-height: 44px; /* 确保触摸友好 */
+    border-radius: 2rem;
   }
   
   /* 移动端导航优化 */
   nav .p-3 {
     padding: 0.875rem; /* 增大触摸区域 */
   }
+
+  /* Hero区域移动端优化 */
+  #hero {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+
+  /* 移动端网格间距 */
+  .grid.grid-cols-1.lg\\:grid-cols-2 {
+    gap: 2rem;
+  }
+
+  /* 移动端文字居中 */
+  .text-center.lg\\:text-left {
+    text-align: center;
+  }
+
+  /* 移动端按钮组 */
+  .flex.flex-col.sm\\:flex-row {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
 }
 
 /* 小平板响应式优化 */
 @media (min-width: 641px) and (max-width: 768px) {
   .hero-main-title {
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(2rem, 7vw, 3rem);
   }
 
   .hero-sub-title {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
   }
   
   .section-title {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  .btn-primary, .btn-ghost {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
 /* 平板横屏优化 */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero-main-title {
-    font-size: clamp(3rem, 7vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 4rem);
   }
 
   .hero-sub-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3rem);
   }
 }
 
@@ -509,6 +539,14 @@ a {
   .btn-primary:hover, .btn-ghost:hover {
     transform: none;
   }
+
+  /* 移动端图片悬停效果禁用 */
+  .relative.w-48.h-48:hover,
+  .relative.w-64.h-64:hover,
+  .relative.w-80.h-80:hover,
+  .relative.w-96.h-96:hover {
+    transform: none;
+  }
 }
 
 /* 高密度屏幕优化 */
@@ -521,17 +559,52 @@ a {
 
 /* 横屏手机优化 */
 @media (max-height: 500px) and (orientation: landscape) {
-  .hero-section {
+  .hero-section, #hero {
     min-height: 100vh;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
   
   .hero-main-title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
   
   .section-title {
-    font-size: clamp(1.5rem, 6vw, 2rem);
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+
+  .grid.grid-cols-1.lg\\:grid-cols-2 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .order-1.lg\\:order-2 {
+    order: 1;
+  }
+
+  .order-2.lg\\:order-1 {
+    order: 2;
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 360px) {
+  .hero-main-title {
+    font-size: clamp(1.5rem, 8vw, 2rem);
+  }
+
+  .hero-tagline {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+  }
+
+  .btn-primary, .btn-ghost {
+    padding: 0.625rem 1rem;
+    font-size: 0.75rem;
+    min-width: 150px;
+  }
+
+  .w-48.h-48 {
+    width: 10rem;
+    height: 10rem;
   }
 }
 
