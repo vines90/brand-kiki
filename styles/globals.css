@@ -428,25 +428,9 @@ a {
     border-radius: 1.5rem;
   }
   
-  .hero-title {
-    font-size: clamp(2rem, 10vw, 3rem);
-    line-height: 0.9;
-  }
-
   .hero-main-title {
-    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    font-size: clamp(2rem, 9vw, 3rem);
     line-height: 0.9;
-  }
-
-  .hero-sub-title {
-    font-size: clamp(1.25rem, 6vw, 2rem);
-    line-height: 1;
-  }
-
-  .hero-tagline {
-    font-size: clamp(0.875rem, 3.5vw, 1.125rem);
-    line-height: 1.4;
-    margin-top: 0.5rem;
   }
   
   .section-title {
@@ -456,7 +440,7 @@ a {
   
   /* 移动端按钮优化 */
   .btn-primary, .btn-ghost {
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
     min-height: 44px; /* 确保触摸友好 */
     border-radius: 2rem;
@@ -472,34 +456,12 @@ a {
     min-height: 100vh;
     padding: 1rem;
   }
-
-  /* 移动端网格间距 */
-  .grid.grid-cols-1.lg\\:grid-cols-2 {
-    gap: 2rem;
-  }
-
-  /* 移动端文字居中 */
-  .text-center.lg\\:text-left {
-    text-align: center;
-  }
-
-  /* 移动端按钮组 */
-  .flex.flex-col.sm\\:flex-row {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
 }
 
 /* 小平板响应式优化 */
 @media (min-width: 641px) and (max-width: 768px) {
   .hero-main-title {
-    font-size: clamp(2rem, 7vw, 3rem);
-  }
-
-  .hero-sub-title {
-    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
   }
   
   .section-title {
@@ -515,11 +477,7 @@ a {
 /* 平板横屏优化 */
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero-main-title {
-    font-size: clamp(2.5rem, 6vw, 4rem);
-  }
-
-  .hero-sub-title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(3rem, 6vw, 4rem);
   }
 }
 
@@ -539,14 +497,6 @@ a {
   .btn-primary:hover, .btn-ghost:hover {
     transform: none;
   }
-
-  /* 移动端图片悬停效果禁用 */
-  .relative.w-48.h-48:hover,
-  .relative.w-64.h-64:hover,
-  .relative.w-80.h-80:hover,
-  .relative.w-96.h-96:hover {
-    transform: none;
-  }
 }
 
 /* 高密度屏幕优化 */
@@ -559,52 +509,30 @@ a {
 
 /* 横屏手机优化 */
 @media (max-height: 500px) and (orientation: landscape) {
-  .hero-section, #hero {
+  #hero {
     min-height: 100vh;
-    padding: 1rem 0;
+    padding: 0.5rem;
   }
   
   .hero-main-title {
-    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
   }
   
   .section-title {
     font-size: clamp(1.25rem, 5vw, 1.75rem);
-  }
-
-  .grid.grid-cols-1.lg\\:grid-cols-2 {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .order-1.lg\\:order-2 {
-    order: 1;
-  }
-
-  .order-2.lg\\:order-1 {
-    order: 2;
   }
 }
 
 /* 超小屏幕优化 */
 @media (max-width: 360px) {
   .hero-main-title {
-    font-size: clamp(1.5rem, 8vw, 2rem);
-  }
-
-  .hero-tagline {
-    font-size: clamp(0.75rem, 3vw, 1rem);
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
   }
 
   .btn-primary, .btn-ghost {
-    padding: 0.625rem 1rem;
-    font-size: 0.75rem;
-    min-width: 150px;
-  }
-
-  .w-48.h-48 {
-    width: 10rem;
-    height: 10rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8rem;
+    min-width: 160px;
   }
 }
 
