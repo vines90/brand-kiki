@@ -5,6 +5,9 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import { useTranslation } from 'next-i18next'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
+import rehypeSanitize from 'rehype-sanitize'
 import { motion } from 'framer-motion'
 import { 
   ArrowLeft, 
@@ -18,7 +21,7 @@ import {
   ChevronRight
 } from 'lucide-react'
 import Layout from '../../components/Layout'
-import { Article, articles, getArticleBySlug, getRelatedArticles } from '../../data/articles'
+import { Article, getArticles, getArticleBySlug, getRelatedArticles } from '../../lib/database'
 
 interface ArticlePageProps {
   article: Article
@@ -64,7 +67,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.excerpt} />
         <meta property="og:type" content="article" />
-        <meta property="article:author" content={article.author.name} />
+        <meta property="article:author" content={article.author_name} />
         <meta property="article:published_time" content={article.date} />
         <meta property="article:tag" content={article.tags.join(', ')} />
       </Head>
@@ -130,7 +133,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                 </div>
                 <div className="flex items-center space-x-2">
                   <Clock className="w-4 h-4" />
-                  <span>{article.readTime}</span>
+                  <span>{article.readtime}</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Eye className="w-4 h-4" />
@@ -165,16 +168,22 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                   .prose-purple :global(h3) {
                     @apply text-xl font-bold text-gray-900 dark:text-white mt-6 mb-3;
                   }
+                  .prose-purple :global(h4) {
+                    @apply text-lg font-bold text-gray-900 dark:text-white mt-4 mb-2;
+                  }
                   .prose-purple :global(p) {
                     @apply mb-4 text-gray-700 dark:text-gray-300 leading-relaxed;
                   }
                   .prose-purple :global(ul) {
                     @apply mb-4 ml-6 space-y-2 text-gray-700 dark:text-gray-300;
                   }
+                  .prose-purple :global(ol) {
+                    @apply mb-4 ml-6 space-y-2 text-gray-700 dark:text-gray-300;
+                  }
                   .prose-purple :global(li) {
                     @apply relative;
                   }
-                  .prose-purple :global(li::before) {
+                  .prose-purple :global(ul li::before) {
                     content: '';
                     @apply absolute -left-6 top-2 w-2 h-2 bg-primary-100 rounded-full;
                   }
@@ -184,8 +193,49 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                   .prose-purple :global(blockquote) {
                     @apply border-l-4 border-primary-100 pl-6 my-6 italic text-gray-600 dark:text-gray-400;
                   }
+                  .prose-purple :global(hr) {
+                    @apply my-8 border-gray-300 dark:border-gray-600;
+                  }
+                  .prose-purple :global(table) {
+                    @apply w-full my-6 border-collapse border border-gray-300 dark:border-gray-600;
+                  }
+                  .prose-purple :global(th) {
+                    @apply border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 px-4 py-2 text-left font-semibold text-gray-900 dark:text-white;
+                  }
+                  .prose-purple :global(td) {
+                    @apply border border-gray-300 dark:border-gray-600 px-4 py-2 text-gray-700 dark:text-gray-300;
+                  }
+                  .prose-purple :global(img) {
+                    @apply my-6 rounded-lg shadow-lg max-w-full h-auto;
+                  }
+                  .prose-purple :global(code) {
+                    @apply bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono text-primary-100;
+                  }
+                  .prose-purple :global(pre) {
+                    @apply bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto my-4;
+                  }
+                  .prose-purple :global(pre code) {
+                    @apply bg-transparent px-0 py-0;
+                  }
                 `}</style>
-                <ReactMarkdown>
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  rehypePlugins={[rehypeRaw, rehypeSanitize]}
+                  components={{
+                    img: ({ node, ...props }) => (
+                      <img
+                        {...props}
+                        className="my-6 rounded-lg shadow-lg max-w-full h-auto"
+                        loading="lazy"
+                      />
+                    ),
+                    table: ({ node, ...props }) => (
+                      <div className="overflow-x-auto my-6">
+                        <table {...props} className="w-full border-collapse border border-gray-300 dark:border-gray-600 min-w-full" />
+                      </div>
+                    )
+                  }}
+                >
                   {article.content}
                 </ReactMarkdown>
               </div>
@@ -220,10 +270,10 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                    {article.author.name}
+                    {article.author_name}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                    {article.author.bio}
+                    {article.author_bio}
                   </p>
                 </div>
               </div>
@@ -262,7 +312,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
                             </div>
                             <div className="flex items-center space-x-1">
                               <Clock className="w-3 h-3" />
-                              <span>{relatedArticle.readTime}</span>
+                              <span>{relatedArticle.readtime}</span>
                             </div>
                           </div>
                         </div>
@@ -291,6 +341,7 @@ export default function ArticlePage({ article, relatedArticles }: ArticlePagePro
 }
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const articles = await getArticles()
   const paths = articles.flatMap((article) =>
     (locales || ['zh', 'en']).map((locale) => ({
       params: { slug: article.slug },
@@ -306,7 +357,7 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const slug = params?.slug as string
-  const article = getArticleBySlug(slug)
+  const article = await getArticleBySlug(slug)
 
   if (!article) {
     return {
@@ -314,7 +365,7 @@ export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
     }
   }
 
-  const relatedArticles = getRelatedArticles(slug, 3)
+  const relatedArticles = await getRelatedArticles(slug, 3)
 
   return {
     props: {

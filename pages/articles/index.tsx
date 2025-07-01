@@ -14,7 +14,7 @@ import {
   Search
 } from 'lucide-react'
 import Layout from '../../components/Layout'
-import { Article, articles } from '../../data/articles'
+import { Article, getArticles } from '../../lib/database'
 
 interface ArticlesPageProps {
   articles: Article[]
@@ -219,7 +219,7 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
                               </div>
                               <div className="flex items-center space-x-1">
                                 <Clock className="w-3 h-3" />
-                                <span>{article.readTime}</span>
+                                <span>{article.readtime}</span>
                               </div>
                             </div>
                             <div className="text-primary-100 group-hover:text-primary-200">
@@ -264,6 +264,8 @@ export default function ArticlesPage({ articles: initialArticles }: ArticlesPage
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const articles = await getArticles()
+  
   return {
     props: {
       articles,

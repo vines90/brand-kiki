@@ -3,12 +3,19 @@ import { useTranslation } from 'next-i18next'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Calendar, ArrowRight, BookOpen, Lightbulb, TrendingUp, Users, Eye, MessageCircle } from 'lucide-react'
-import { articles, getFeaturedArticle } from '../data/articles'
+import { Article } from '../lib/database'
 
-export default function InsightsSection() {
+interface InsightsSectionProps {
+  articles: Article[]
+  featuredArticle: Article | null
+}
+
+export default function InsightsSection({ articles, featuredArticle }: InsightsSectionProps) {
   const { t } = useTranslation('common')
 
-  const featuredArticle = getFeaturedArticle()
+  if (!featuredArticle) {
+    return null
+  }
 
   const categories = [
     t('insights.categories.all'),
@@ -131,7 +138,7 @@ export default function InsightsSection() {
                       </div>
                       <div className="flex items-center space-x-2">
                         <BookOpen className="w-4 h-4" />
-                        <span>{featuredArticle.readTime}</span>
+                        <span>{featuredArticle.readtime}</span>
                       </div>
                     </div>
                     
@@ -202,7 +209,7 @@ export default function InsightsSection() {
                       </div>
                       <div className="flex items-center space-x-1">
                         <BookOpen className="w-3 h-3" />
-                        <span>{article.readTime}</span>
+                        <span>{article.readtime}</span>
                       </div>
                     </div>
                     

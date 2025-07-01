@@ -8,8 +8,14 @@ import HeroSection from '../components/HeroSection'
 import AboutSection from '../components/AboutSection'
 import BusinessSection from '../components/BusinessSection'
 import InsightsSection from '../components/InsightsSection'
+import { Article } from '../lib/database'
 
-export default function Home() {
+interface HomeProps {
+  articles: Article[]
+  featuredArticle: Article | null
+}
+
+export default function Home({ articles, featuredArticle }: HomeProps) {
   const { t } = useTranslation('common')
 
   return (
@@ -27,7 +33,7 @@ export default function Home() {
       <Layout>
         <HeroSection />
         <AboutSection />
-        <InsightsSection />
+        <InsightsSection articles={articles} featuredArticle={featuredArticle} />
         <BusinessSection />
       </Layout>
     </>
@@ -35,8 +41,15 @@ export default function Home() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const { getArticles, getFeaturedArticle } = await import('../lib/database')
+  
+  const articles = await getArticles()
+  const featuredArticle = await getFeaturedArticle()
+  
   return {
     props: {
+      articles,
+      featuredArticle,
       ...(await serverSideTranslations(locale ?? 'zh', ['common'])),
     },
   }
