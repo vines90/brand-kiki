@@ -424,39 +424,115 @@ a {
 /* 响应式工具类 */
 @media (max-width: 640px) {
   .bento-card {
-    padding: 1.5rem;
-    border-radius: 20px;
+    padding: 1rem;
+    border-radius: 1.5rem;
   }
   
-  .hero-title {
-    letter-spacing: -0.01em;
-  }
-
-  /* 移动端文字优化 */
   .hero-main-title {
-    font-size: clamp(2rem, 15vw, 3.5rem);
+    font-size: clamp(2rem, 9vw, 3rem);
     line-height: 0.9;
   }
-
-  .hero-sub-title {
-    font-size: clamp(1.5rem, 10vw, 3rem);
+  
+  .section-title {
+    font-size: clamp(1.5rem, 7vw, 2rem);
     line-height: 1.1;
   }
+  
+  /* 移动端按钮优化 */
+  .btn-primary, .btn-ghost {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    min-height: 44px; /* 确保触摸友好 */
+    border-radius: 2rem;
+  }
+  
+  /* 移动端导航优化 */
+  nav .p-3 {
+    padding: 0.875rem; /* 增大触摸区域 */
+  }
 
-  .hero-tagline {
-    font-size: clamp(1rem, 5vw, 1.5rem);
-    line-height: 1.4;
+  /* Hero区域移动端优化 */
+  #hero {
+    min-height: 100vh;
+    padding: 1rem;
   }
 }
 
-/* 平板端优化 */
-@media (min-width: 641px) and (max-width: 1024px) {
+/* 小平板响应式优化 */
+@media (min-width: 641px) and (max-width: 768px) {
   .hero-main-title {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+  }
+  
+  .section-title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
   }
 
-  .hero-sub-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+  .btn-primary, .btn-ghost {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* 平板横屏优化 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-main-title {
+    font-size: clamp(3rem, 6vw, 4rem);
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary, .btn-ghost, button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* 移除悬停效果 */
+  .bento-card:hover {
+    transform: none;
+    box-shadow: 0 4px 20px rgba(123, 90, 163, 0.1);
+  }
+  
+  .btn-primary:hover, .btn-ghost:hover {
+    transform: none;
+  }
+}
+
+/* 高密度屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .gradient-text, .gradient-text-animated {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* 横屏手机优化 */
+@media (max-height: 500px) and (orientation: landscape) {
+  #hero {
+    min-height: 100vh;
+    padding: 0.5rem;
+  }
+  
+  .hero-main-title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+  
+  .section-title {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+}
+
+/* 超小屏幕优化 */
+@media (max-width: 360px) {
+  .hero-main-title {
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  .btn-primary, .btn-ghost {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8rem;
+    min-width: 160px;
   }
 }
 

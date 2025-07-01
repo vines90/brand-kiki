@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { appWithTranslation } from 'next-i18next'
+import { Analytics } from '@vercel/analytics/next'
 import Head from 'next/head'
 import '../styles/globals.css'
 
@@ -75,6 +76,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <Component {...pageProps} />
+      <Analytics />
     </>
   )
 }

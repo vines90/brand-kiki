@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- 首页 - 中文 -->
+  <url>
+    <loc>https://kiki-brand.com/</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kiki-brand.com/en" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://kiki-brand.com/" />
+  </url>
+
+  <!-- 首页 - 英文 -->
+  <url>
+    <loc>https://kiki-brand.com/en</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kiki-brand.com/en" />
+    <xhtml:link rel="alternate" hreflang="zh-CN" href="https://kiki-brand.com/" />
+  </url>
+
+  <!-- 关于KIKI页面 -->
+  <url>
+    <loc>https://kiki-brand.com/#about</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 企业业务页面 -->
+  <url>
+    <loc>https://kiki-brand.com/#business</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- 行业观点页面 -->
+  <url>
+    <loc>https://kiki-brand.com/#insights</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 联系我们页面 -->
+  <url>
+    <loc>https://kiki-brand.com/#contact</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 文章列表页面 -->
+  <url>
+    <loc>https://kiki-brand.com/articles</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 具体文章页面 - 示例 -->
+  <url>
+    <loc>https://kiki-brand.com/articles/stainless-steel-industry-trends-2024</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://kiki-brand.com/articles/colored-stainless-steel-manufacturing</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://kiki-brand.com/articles/guangdong-stainless-steel-market</loc>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset> 
