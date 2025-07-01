@@ -54,26 +54,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // 在页面加载前立即应用主题，避免闪烁
-              (function() {
-                try {
-                  const purpleTheme = localStorage.getItem('purpleTheme') === 'true';
-                  const darkMode = localStorage.getItem('darkMode') === 'true';
-                  
-                  if (purpleTheme) {
-                    document.documentElement.classList.add('theme-purple');
-                  }
-                  if (darkMode) {
-                    document.documentElement.classList.add('dark');
-                  }
-                } catch (e) {}
-              })();
-            `,
-          }}
-        />
       </Head>
       <Component {...pageProps} />
       <Analytics />
